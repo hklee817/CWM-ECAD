@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Exercise #2 
-// Student Name:
-// Date: 
+// Student Name:Ho Lee
+// Date: 08/06/2020
 //
 //  Description: In this exercise, you need to design a multiplexer, where the  
 //  output acts according to the following truth table:
@@ -22,11 +22,15 @@
 
 module mux(
     //Todo: define inputs here
+	input a,
+	input b,
+	input sel,
+	output out
     );
     
     //Todo: define registers and wires here
-
+	
 
     //Todo: define your logic here                 
-      
+      assign #5 out = (sel==0)? a:b;
 endmodule
