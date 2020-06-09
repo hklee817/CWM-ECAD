@@ -31,15 +31,20 @@ module logicalunit(
     
     wire   out;
 
-    //wire   [1:0] ab =={a,b};
-    //assign out= (ab== 2b'00)? func[0]:
-		//(ab== 2b'01)? func[1]:
-		//(ab== 2b'10)? func[2]:
+    //wire   [1:0] AB ={a,b};
+    //assign out= (AB== 2b'00)? func[0]:
+		//(AB== 2b'01)? func[1]:
+		//(AB== 2b'10)? func[2]:
 		//func[3];
+ 
+	assign out= (a==0 && b==0)? func[0]:
+		    (a==0 && b==1)? func[1]:
+		    (a==1 && b==0)? func[2]:
+		    func[3];
 
-     assign out = (func == 4b'1110)? a|b:
-		  (func == 4b'0110)? a^b:
-		  (func == 4b'1000)? a&b;
+     //assign out = (func == 4b'1110)? a|b:
+		  //(func == 4b'0110)? a^b:
+		  //(func == 4b'1000)? a&b;
 	    
          
       //Todo: add you logic here
