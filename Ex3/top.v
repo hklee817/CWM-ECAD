@@ -35,7 +35,7 @@ module counter(
 	always @(posedge clk or rst)
 	begin
 	  counter_out<= (rst)	   			?	8b'0:
-	 		(enabl==0) 			?	counter_out:
+	 		(enable==0) 			?	counter_out:
 	 		(enable && (direction==1))	?	counter_out+1:
 	 		(enable && (direction==0))	?	counter_out-1;
 	end

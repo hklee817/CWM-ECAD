@@ -15,4 +15,19 @@
 //
 //  You need to write the whole file.
 //////////////////////////////////////////////////////////////////////////////////
+module dice (
+	input clk,
+	input rst,
+	input button,
+	output reg [2:0] throw
+)
+	always @ (posedge clk or posedge rst) begin
+		if (rst )
+			throw <= 3b'0;
+		else if (button )
+			throw <= throw +1;
+		//else if (~button)
+			//throw <= throw 
+		end
 
+endmodule
