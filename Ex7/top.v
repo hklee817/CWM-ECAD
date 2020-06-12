@@ -13,4 +13,21 @@
 //           result[4:0]
 //////////////////////////////////////////////////////////////////////////////////
 
+module timetable (
+	input clk,
+	input [2:0] a ,
+	input [2:] b,
+	input read ,
+	output wire [5:0} result
+	);
 
+	BLOCKMEM the_block [5:0](
+	.clk(clk),
+	.ena(read),
+	.wea(1b'0),
+	.addr({a,b}),
+	.dina(6b'0)
+	.douta(result)
+	);
+
+endmodule
